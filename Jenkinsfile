@@ -20,7 +20,7 @@ pipeline {
         }
         stage ('Push Registry') {
             steps {
-                withcCredentials([UsernamePassword(credentialsId: 'dockerhub', passwordVariable:'226Juma7', usernameVariable: 'harckus')]) {
+                withcCredentials([UsernamePassword(credentialsId: 'dockerhub', passwordVariable:'', usernameVariable: '')]) {
                   sh 'docker tag app:test harckus/app:stable'
                   sh 'docker push harckus/app:stable '  
                 }         
