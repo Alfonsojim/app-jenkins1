@@ -9,7 +9,7 @@ pipeline {
         stage ('Test') {
             steps {
                 echo 'Test de la imagen'
-                sh 'docker run --rm --name app -i -p 80:80 app:test'
+                sh 'docker run --rm --name app -id -p 80:80 app:test'
                 sh '/bin/nc -vz localhost 80'
             }
             post {
